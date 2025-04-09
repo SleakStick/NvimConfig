@@ -2,6 +2,16 @@ return {
   "lervag/vimtex", -- Plugin repository
   config = function()
     -- Set the LaTeX compiler
+    vim.g.vimtex_compiler_latexmk = {
+      executable = 'latexmk',
+      options = {
+        '-verbose',
+        '-file-line-error',
+        '-synctex=1',
+        '-interaction=nonstopmode',
+        '-output-directory=build'
+      },
+    }
     vim.g.vimtex_compiler_method = "latexmk"
 
     -- Configure PDF viewer (replace with your preferred viewer)
