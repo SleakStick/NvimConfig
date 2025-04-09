@@ -2,7 +2,11 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
 
+<<<<<<< HEAD
+keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+=======
 keymap.set("i", "ö", "<ESC>", { desc = "Exit insert mode with jk" })
+>>>>>>> origin/main
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
