@@ -25,7 +25,7 @@ For windows you should put the config in `AppData/Local/nvim/`. It should work h
 # Usage
 
 The exhastive list of keybinds can be found by pressing `v`to enter visual mode, and the quick binds set up by this config can be seen by pressing space when in normal mode. Here are some Basic keybinds though.
-1. `j-k`
+1. `j-k` exit to normal mode, this keybind is very useful but getting it right can be tricky at the beginning.
    
 The leader key is Space, so the following keybinds must be preceded by space.
 
