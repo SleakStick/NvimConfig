@@ -20,7 +20,7 @@ I use this Neovim config for Latex (among others) on my Arch machine
 
 For windows you should put the config in `AppData/Local/nvim/`. It should work however i have found the NvimTree to be pretty slow on Windows
 
-3. Launch and enjoy your new Latex IDE.
+3. Launch neovim using the `nvim`, type in `:Lazy` to open the LazyNvim package manager, the press `I` to install all and finally `:q` to quit the LazyNvim package manager and enjoy your new IDE.
 
 # Usage
 
