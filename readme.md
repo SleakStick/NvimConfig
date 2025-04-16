@@ -8,7 +8,7 @@ I use this Neovim config for Latex (among others) on my Arch machine
 
    **Archlinux** `pacman -S neovim nodejs npm`
 
-  **Ubuntu** apt install nodejs npm`
+  **Ubuntu** `apt install nodejs npm`
 
 2. Clone the dotfiles in the `/.config/nvim` folder
 
