@@ -28,7 +28,19 @@ s(
     i(2),
   }
 ),
-
+s(
+  {
+    trig="mc",
+    dscr="\\mathcal{}",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\mathcal{"),
+    i(1),
+    t("}"),
+    i(2),
+  }
+),
 s(
   {
     trig="ita",
@@ -212,6 +224,19 @@ s(
 ),
 s(
   {
+    trig="ndef",
+    dscr="\\definition{}",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\definition{"),
+    i(1),
+    t("}"),
+    i(2),
+  }
+),
+s(
+  {
     trig="mcol",
     dscr="Multicols environment",
     snippetType="autosnippet",
@@ -238,4 +263,278 @@ s(
     i(2),
   }
 ),
-} 
+
+s(
+  {
+    trig="vc",
+    dscr="\\vec{}",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\vec{"),
+    i(1),
+    t("}"),
+    i(2),
+  }
+),
+s(
+  {
+    trig="IP",
+    dscr="IP raum",
+    snippetType="snippet",
+  },
+  {
+    t("Sei $(V,<\\cdot,\\cdot>)$ ein IP-Raum "),
+  }
+),
+
+s(
+  {
+    trig="LRar",
+    dscr="\\Longrightarrow",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\Longrightarrow"),
+  }
+),
+
+s(
+  {
+    trig="Lar",
+    dscr="\\Leftarrow",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\Leftarrow"),
+  }
+),
+s(
+  {
+    trig="lar",
+    dscr="\\leftarro3",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\leftarrow"),
+  }
+),
+s(
+  {
+    trig="LeRar",
+    dscr="",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\Leftrightarrow"),
+  }
+),
+s(
+  {
+    trig="limfty",
+    dscr="",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\lim_{"),
+    i(1),
+    t("\\rightarrow\\infty}"),
+    i(2),
+  }
+),
+s(
+  {
+    trig="lim",
+    dscr="\\lim_{\\rightarrow}",
+    snippetType="snippet",
+  },
+  {
+      t("\\lim_{"),
+      i(1),
+      t("}"),
+      i(2),
+
+  }
+),
+s(
+  {
+    trig="sum",
+    dscr="\\sum",
+    snippetType="snippet",
+  },
+  {
+    t("\\sum_{"),
+    i(1),
+    t("}^{"),
+    i(2),
+    t("}"),
+    i(3),
+  }
+),
+s(
+  {
+    trig="frall",
+    dscr="\\forall",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\forall"),
+  }
+),
+s(
+  {
+    trig="inf",
+    dscr="\\infty",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\infty"),
+  }
+),
+
+s(
+  {
+    trig="cd",
+    dscr="\\cdot",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\cdot"),
+  }
+),
+s(
+  {
+    trig="cds",
+    dscr="\\cdots",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\cdots"),
+  }
+),
+s(
+  {
+    trig="circ",
+    dscr="\\circ",
+    snippetType="snippet",
+  },
+  {
+    t("\\circ"),
+  }
+),
+s(
+  {
+    trig="nmat",
+    dscr="New matrix",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\begin{matrix}"),
+    i(1),
+    t("\\end{matrix}"),
+    i(2),
+  }
+),
+s(
+  {
+    trig="sin",
+    dscr="\\sin",
+    snippetType="snippet",
+  },
+  {
+    t("\\sin\\left("),
+    i(1),
+    t("\\right)"),
+    i(2),
+  }
+),
+s(
+  {
+    trig="cos",
+    dscr="\\cos",
+    snippetType="snippet",
+  },
+  {
+    t("\\cos\\left"),
+    i(1),
+    t("\\right)"),
+    i(2),
+  }
+),
+s(
+  {
+    trig="sbset",
+    dscr="",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\subset"),
+  }
+),
+s(
+  {
+    trig="spset",
+    dscr="",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\supset"),
+  }
+),
+s(
+  {
+    trig="lbd",
+    dscr="\\lambda",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\lambda"),
+  }
+),
+s(
+  {
+    trig="exs",
+    dscr="\\exists",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\exists"),
+  }
+),
+s(
+  {
+    trig="tet",
+    dscr="\\theta",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\theta"),
+  }
+),
+s(
+  {
+    trig="mc",
+    dscr="\\mathcal{}",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\mathcal{"),
+    i(1),
+    t("}"),
+    i(2),
+  }
+),
+s(
+  {
+    trig="brcs",
+    dscr="\\left\\lbrace ... \\right \\rbrace",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\left\\lbrace"),
+    i(1),
+    t("\\right\\rbrace"),
+    i(2),
+  }
+),
+}
