@@ -237,7 +237,7 @@ s(
 ),
 s(
   {
-    trig="mcol",
+    trig="mucol",
     dscr="Multicols environment",
     snippetType="autosnippet",
   },
@@ -373,7 +373,7 @@ s(
 ),
 s(
   {
-    trig="frall",
+    trig="fral",
     dscr="\\forall",
     snippetType="autosnippet",
   },
@@ -463,7 +463,7 @@ s(
 ),
 s(
   {
-    trig="sbset",
+    trig="sbs",
     dscr="",
     snippetType="autosnippet",
   },
@@ -473,7 +473,7 @@ s(
 ),
 s(
   {
-    trig="spset",
+    trig="sps",
     dscr="",
     snippetType="autosnippet",
   },
@@ -535,6 +535,56 @@ s(
     i(1),
     t("\\right\\rbrace"),
     i(2),
+  }
+),
+s(
+  {
+    trig="ga",
+    dscr="\\gamma",
+    snippetType="snippet",
+  },
+  {
+    t("\\gamma"),
+  }
+),
+s(
+  {
+    trig="seimat",
+    dscr="M_{n\\times n}(K)",
+    snippetType="autosnippet",
+  },
+  {
+    t("M_{"),
+    i(1),
+    t("\\times"),
+    i(2),
+    t("}("),
+    i(3),
+    t(")"),
+    i(4),
+  }
+),
+s(
+  {
+    trig="tld",
+    dscr="\\tilde{}",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\tilde{"),
+    i(1),
+    t("}"),
+    i(2),
+  }
+),
+s(
+  {
+    trig="D",
+    dscr="\\Delta",
+    snippetType="snippet",
+  },
+  {
+    t("\\Delta"),
   }
 ),
 }
