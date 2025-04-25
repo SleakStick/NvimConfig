@@ -587,4 +587,14 @@ s(
     t("\\Delta"),
   }
 ),
+s(
+  {
+    trig="B",
+    dscr="\\Beta",
+    snippetType="snippet",
+  },
+  {
+    t("\\Beta"),
+  }
+),
 }
