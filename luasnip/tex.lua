@@ -455,7 +455,7 @@ s(
     snippetType="snippet",
   },
   {
-    t("\\cos\\left"),
+    t("\\cos\\left("),
     i(1),
     t("\\right)"),
     i(2),
@@ -595,6 +595,42 @@ s(
   },
   {
     t("\\Beta"),
+  }
+),
+s(
+  {
+    trig="nbem",
+    dscr="\\bemerkung",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\bemerkung{"),
+    i(1),
+    t("}"),
+    i(2),
+  }
+),
+s(
+  {
+    trig="nbes",
+    dscr="\\beispiel{}",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\beispiel{"),
+    i(1),
+    t("}"),
+    i(2),
+  }
+),
+s(
+  {
+    trig="Lrar",
+    dscr="\\Leftrightarrow",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\Leftrightarrow"),
   }
 ),
 }
