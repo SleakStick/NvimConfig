@@ -633,4 +633,31 @@ s(
     t("\\Leftrightarrow"),
   }
 ),
+s(
+  {
+    trig="b",
+    dscr="Brackets environment for easy access out of the bracket",
+    snippetType="snippet",
+    trigEngine= "ecma",
+  },
+  {
+      t("{"),
+      i(1),
+      t("}"),
+      i(2),
+  }
+),
+s(
+  {
+    trig="nkor",
+    dscr="\\korollar{}",
+    snippetType="autosnippet",
+  },
+  {
+      t("\\korollar{"),
+      i(1),
+      t("}"),
+i(2),
+  }
+),
 }
