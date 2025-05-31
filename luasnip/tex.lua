@@ -660,4 +660,49 @@ s(
 i(2),
   }
 ),
+s(
+  {
+    trig="pti",
+    dscr="\\partial",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\partial"),
+  }
+),
+s(
+  {
+    trig="£",
+    dscr="Brackets for quick tabulation outside",
+    snippetType="autosnippet",
+  },
+  {
+    t("{"),
+    i(1),
+    t("}"),
+    i(2),
+  }
+),s(
+  {
+    trig="RN",
+      dscr="\\mathbb{R}^n",
+    snippetType="autosnippet",
+  },
+  {
+      t("\\mathbb{R}^n"),
+  }
+),
+s(
+  {
+    trig="lrd",
+    dscr="\\left_ \\right_",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\left"), 
+    i(1),
+    t("\\right"),
+    i(2),
+  }
+),
 }
