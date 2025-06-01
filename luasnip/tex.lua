@@ -675,6 +675,7 @@ s(
     trig="£",
     dscr="Brackets for quick tabulation outside",
     snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("{"),
