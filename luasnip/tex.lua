@@ -705,4 +705,45 @@ s(
     i(2),
   }
 ),
+
+s(
+  {
+    trig="alp",
+    dscr="\\alpha",
+    snippetType="snippet",
+  },
+  {
+    t("\\alpha"),
+  }
+),
+s(
+  {
+    trig="bet",
+    dscr="\\beta",
+    snippetType="snippet",
+  },
+  {
+    t("\\beta"),
+  }
+),
+  s(
+    {
+      trig="vphi",
+      dscr="\\varphi",
+      snippetType="autosnippet",
+    },
+    {
+      t("\\varphi"),
+    }
+  ),
+s(
+  {
+    trig="phi",
+    dscr="\\phi",
+    snippetType="autosnippet",
+  },
+  {
+    t("\\phi"),
+  }
+),
 }
