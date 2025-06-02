@@ -24,6 +24,8 @@ For windows you should put the config in `AppData/Local/nvim/`. It should work h
 
 # Usage
 
+## Keybinds
+
 The exhastive list of keybinds can be found by pressing `v`to enter visual mode, and the quick binds set up by this config can be seen by pressing space when in normal mode. Here are some Basic keybinds though.
 1. `j-k` exit to normal mode, this keybind is very useful but getting it right can be tricky at the beginning.
    
@@ -42,3 +44,12 @@ The leader key is Space, so the following keybinds must be preceded by space.
 12. `<s-x>` Close current split
 
 I strongly encourage getting used to all the keybinds and shortcuts neovim has to offer, it can make editing code/documents a lot faster.
+
+## Snippets
+
+The whole list of snippets for latex can be found in `/luasnip/tex.lua` if you wish to find a specific snippet, simply search the command the snippet should fill, the description of each snippet contains exactly what it does. For example, looking for `\varepsilon` in the tex tells you that the snippet is `veps` and it will autofill (typing `veps` as a whole word will type `\varepsilon`).
+
+Snippets that don't contain the `snippetType="autosnippet"` line, need to be expanded with the enter key. And points of interest (for example `\frac{ here }{ and here}` can be navigated through using `alt+j/k`.
+
+There is a snippet for adding new snippets too, type `ns` and enter, then fill in your new snippet. Adding snippets is fast and easy and I really recommend doing so to better match your own workflow.
+
