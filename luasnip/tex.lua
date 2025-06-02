@@ -200,6 +200,7 @@ s(
     trig="d",
     dscr="\\delta",
     snippetType="snippet",
+    wordTrig=false,
   },
   {
     t("\\delta"),
@@ -210,6 +211,7 @@ s(
     trig="int",
     dscr="Integral snippet",
     snippetType="snippet",
+    wordTrig=false,
   },
   {
     t("\\int^{"),
@@ -282,6 +284,7 @@ s(
     trig="IP",
     dscr="IP raum",
     snippetType="snippet",
+    wordTrig=false,
   },
   {
     t("Sei $(V,<\\cdot,\\cdot>)$ ein IP-Raum "),
@@ -347,6 +350,7 @@ s(
     trig="lim",
     dscr="\\lim_{\\rightarrow}",
     snippetType="snippet",
+    wordTrig=false,
   },
   {
       t("\\lim_{"),
@@ -361,6 +365,7 @@ s(
     trig="sum",
     dscr="\\sum",
     snippetType="snippet",
+    wordTrig=false,
   },
   {
     t("\\sum_{"),
@@ -417,6 +422,7 @@ s(
     trig="circ",
     dscr="\\circ",
     snippetType="snippet",
+    wordTrig=false,
   },
   {
     t("\\circ"),
@@ -440,6 +446,7 @@ s(
     trig="sin",
     dscr="\\sin",
     snippetType="snippet",
+    wordTrig=false,
   },
   {
     t("\\sin\\left("),
@@ -453,6 +460,7 @@ s(
     trig="cos",
     dscr="\\cos",
     snippetType="snippet",
+    wordTrig=false,
   },
   {
     t("\\cos\\left("),
@@ -542,6 +550,7 @@ s(
     trig="ga",
     dscr="\\gamma",
     snippetType="snippet",
+    wordTrig=false,
   },
   {
     t("\\gamma"),
@@ -582,6 +591,7 @@ s(
     trig="D",
     dscr="\\Delta",
     snippetType="snippet",
+    wordTrig=false,
   },
   {
     t("\\Delta"),
@@ -592,6 +602,7 @@ s(
     trig="B",
     dscr="\\Beta",
     snippetType="snippet",
+    wordTrig=false,
   },
   {
     t("\\Beta"),
@@ -638,6 +649,7 @@ s(
     trig="b",
     dscr="Brackets environment for easy access out of the bracket",
     snippetType="snippet",
+    wordTrig=false,
     trigEngine= "ecma",
   },
   {
@@ -712,6 +724,7 @@ s(
     trig="alp",
     dscr="\\alpha",
     snippetType="snippet",
+    wordTrig=false,
   },
   {
     t("\\alpha"),
@@ -722,6 +735,7 @@ s(
     trig="bet",
     dscr="\\beta",
     snippetType="snippet",
+    wordTrig=false,
   },
   {
     t("\\beta"),
@@ -745,6 +759,33 @@ s(
   },
   {
     t("\\phi"),
+  }
+),
+s(
+  {
+    trig="eta",
+    dscr="\\eta",
+    snippetType="snippet",
+    wordTrig=false,
+  },
+  {
+    t("\\eta"),
+  }
+),
+s(
+  {
+    trig="uset",
+    dscr="\\underset and \\underbrace environment",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\underset{"),
+    i(1),
+    t("}{\\underbrace{"),
+    i(2),
+    t("}}"),
+    i(3),
   }
 ),
 }
