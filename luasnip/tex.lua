@@ -788,4 +788,28 @@ s(
     i(3),
   }
 ),
+s(
+  {
+    trig="psi",
+    dscr="\\psi",
+    snippetType="autosnippet",
+    wordTrig=false,
+  },
+  {
+    t("\\psi"),
+  }
+),
+s(
+  {
+    trig="oline",
+    dscr="\\overline{}",
+    snippetType="autosnippet",
+    wordTrig=false,
+  },
+  {
+    t("\\overline{"),
+    i(1),
+    t("}"),
+  }
+),
 }
