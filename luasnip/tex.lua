@@ -57,7 +57,21 @@ s(
     t({"}","\\end{itemize}"}),
     }
   ),
-
+s(
+  {
+    trig="item",
+    dscr="\\item",
+    snippetType="snippet",
+    wordTrig=false,
+  },
+  {
+      t("\\item["),
+      i(1),
+      t("]{"),
+      i(2),
+      t("}"),
+  }
+),
 s(
   {
     trig="m",
@@ -806,6 +820,17 @@ s(
     t("\\norm{"),
     i(1),
     t("}")
+  }
+),
+s(
+  {
+    trig="tms",
+    dscr=" \\times",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\times"),
   }
 ),
 }
