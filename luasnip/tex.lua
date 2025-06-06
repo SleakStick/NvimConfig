@@ -777,7 +777,7 @@ s(
     trig="psi",
     dscr="\\psi",
     snippetType="autosnippet",
-    wordTrig=false,
+    wordTrig=true,
   },
   {
     t("\\psi"),
@@ -788,7 +788,7 @@ s(
     trig="oline",
     dscr="\\overline{}",
     snippetType="autosnippet",
-    wordTrig=false,
+    wordTrig=true,
   },
   {
     t("\\overline{"),
@@ -801,7 +801,7 @@ s(
     trig="bsy",
     dscr="\\boldsymbol",
     snippetType="autosnippet",
-    wordTrig=false,
+    wordTrig=true,
   },
   {
     t("\\boldsymbol{"),
@@ -814,7 +814,7 @@ s(
     trig="nrm",
     dscr="\\norm",
     snippetType="autosnippet",
-    wordTrig=false,
+    wordTrig=true,
   },
   {
     t("\\norm{"),
@@ -831,6 +831,17 @@ s(
   },
   {
     t("\\times"),
+  }
+),
+s(
+  {
+    trig="pi",
+    dscr="\\pi",
+    snippetType="snippet",
+    wordTrig=false,
+  },
+  {
+    t("\\pi"),
   }
 ),
 }

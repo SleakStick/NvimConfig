@@ -2,8 +2,10 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
+
     local lualine = require("lualine")
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+    local screenkey = require("screenkey")
 
     local colors = {
       blue = "#65D1FF",
@@ -48,7 +50,7 @@ return {
         c = { bg = colors.inactive_bg, fg = colors.semilightgray },
       },
     }
-
+    vim.cmd('Screenkey toggle_statusline_component')
     -- configure lualine with modified theme
     lualine.setup({
       options = {
@@ -61,11 +63,17 @@ return {
             cond = lazy_status.has_updates,
             color = { fg = "#ff9e64" },
           },
+          {
+            function()
+              
+              return screenkey.get_keys()
+            end,
+          },
           { "encoding" },
           { "fileformat" },
           { "filetype" },
         },
-      },
+     },
     })
   end,
 }
