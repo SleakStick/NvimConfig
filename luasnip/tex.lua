@@ -388,7 +388,7 @@ s(
   {
     trig="inf",
     dscr="\\infty",
-    snippetType="autosnippet",
+    snippetType="snippet",
   },
   {
     t("\\infty"),
@@ -842,6 +842,17 @@ s(
   },
   {
     t("\\pi"),
+  }
+),
+s(
+  {
+    trig="qsbs",
+    dscr="\\sqsubset",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\sqsubset"),
   }
 ),
 }
