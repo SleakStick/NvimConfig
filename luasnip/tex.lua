@@ -855,4 +855,28 @@ s(
     t("\\sqsubset"),
   }
 ),
+s(
+  {
+    trig="sqrt",
+    dscr="\\sqrt{}",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\sqrt{"),
+    i(1),
+    t("}"),
+  }
+),
+s(
+  {
+    trig="Phi",
+    dscr="\\Phi",
+    snippetType="snippet",
+    wordTrig=false,
+  },
+  {
+    t("\\Phi"),
+  }
+),
 }
