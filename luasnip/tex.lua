@@ -879,4 +879,41 @@ s(
     t("\\Phi"),
   }
 ),
+s(
+  {
+    trig="sigma",
+    dscr="\\sigma",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\sigma"),
+  }
+),
+s(
+  {
+    trig="oline",
+    dscr="\\overline",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\overline{"),
+    i(1),
+    t("}"),
+  }
+),
+s(
+  {
+    trig="uline",
+    dscr="\\underline",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\underline{"),
+    i(1),
+    t("}"),
+  }
+),
 }
