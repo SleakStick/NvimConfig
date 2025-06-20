@@ -65,7 +65,6 @@ return {
           },
           {
             function()
-              
               return screenkey.get_keys()
             end,
           },
@@ -73,6 +72,7 @@ return {
           { "fileformat" },
           { "filetype" },
         },
+        
      },
     })
   end,
