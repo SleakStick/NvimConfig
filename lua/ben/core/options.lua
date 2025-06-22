@@ -49,3 +49,7 @@ vim.cmd[[
   smap <silent><expr> <M-k> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-k>'
 ]]
 
+vim.keymap.set("n", "<leader>wl", "<Plug>(WormholeLabels)", { desc = "Wormhole Labels" })
+vim.keymap.set("n", "<Esc>", "<Plug>(WormholeCloseLabels)", { desc = "Wormhole Close Labels" })
+
+
