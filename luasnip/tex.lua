@@ -916,4 +916,34 @@ s(
     t("}"),
   }
 ),
+s(
+  {
+    trig="bcup",
+    dscr="\\bigcup",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\bigcup_{"),
+    i(1),
+    t("}^{"),
+    i(2),
+    t("}"),
+  }
+),
+s(
+  {
+    trig="bcap",
+    dscr="\\bigcap",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\bigcap_{"),
+    i(1),
+    t("}^{"),
+    i(2),
+    t("}"),
+  }
+),
 }
