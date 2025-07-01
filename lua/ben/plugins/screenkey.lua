@@ -67,7 +67,8 @@ return {
             ["SUPER"] = "#",
             ["<leader>"] = "<>",
             ["%"] = "%%",
-            },
+            ["<PRINTSCREEN>"] = "prt",
+        },
     })
   end
 }
