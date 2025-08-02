@@ -946,4 +946,32 @@ s(
     t("}"),
   }
 ),
+s(
+  {
+    trig="mf",
+    dscr="\\mathbf{}",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+      t("\\mathbf{"),
+      i(1),
+      t("}"),
+  }
+),
+s(
+  {
+    trig="flsh",
+    dscr="\\begin{flashcard}",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+      t({"\\begin{flashcard}["}),
+      i(1),
+      t({"]",""}),
+      i(2),
+      t({"","\\end{flashcard}"}),
+  }
+),
 }
