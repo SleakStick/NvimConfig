@@ -78,9 +78,9 @@ s(
     dscr="Inline math environment",
   },
   {
-    t("$"),
+    t("\\("),
     i(1),
-    t("$"),
+    t("\\)"),
     }
 ),
 
@@ -972,6 +972,65 @@ s(
       t({"]",""}),
       i(2),
       t({"","\\end{flashcard}"}),
+  }
+),
+s(
+  {
+    trig="omega",
+    dscr="\\omega",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\omega"),
+  }
+),
+s(
+  {
+    trig="ht",
+    dscr="\\hat{}",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\hat{"),
+    i(1),
+    t("}"),
+  }
+),
+s(
+  {
+    trig="xi",
+    dscr="\\xi",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\xi"),
+  }
+),
+s(
+  {
+    trig="rho",
+    dscr="\\rho",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\rho"),
+  }
+),
+s(
+  {
+    trig="i",
+    dscr="inline display math environment",
+    snippetType="snippet",
+    wordTrig=false,
+  },
+  {
+    t("$"),
+    i(1),
+    t("$"),
   }
 ),
 }
