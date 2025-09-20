@@ -102,9 +102,11 @@ s(
     snippetType="autosnippet",
   },
   {
-    t("\\lemma{"),
+    t("\\begin{lemma}["),
     i(1),
-    t("}"),
+    t("]"),
+    i(2),
+    t("\\end{lemma}"),
     }
 ),
 s(
@@ -114,9 +116,11 @@ s(
     snippetType="autosnippet",
   },
   {
-    t("\\satz{"),
+    t("\\begin{satz}["),
     i(1),
-    t("}"),
+    t("]"),
+    i(2),
+    t("\\end{satz}"),
     }
 ),
 
@@ -235,10 +239,40 @@ s(
     snippetType="autosnippet",
   },
   {
-    t("\\definition{"),
+    t("\\begin{def}["),
     i(1),
-    t("}"),
+    t("]"),
+    i(2),
+    t("\\end{def}"),
     }
+),
+s(
+  {
+    trig="nprp",
+    dscr="\\begin{propertz}",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\begin{prop}["),
+    i(1),
+    t("]"),
+    i(2),
+    t("\\end{prop}")
+  }
+),
+s(
+  {
+    trig="nlaw",
+    dscr="\\begin{law}",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\begin{law}"),
+    i(1),
+    t("\\end{law}")
+  }
 ),
 s(
   {
@@ -1033,4 +1067,5 @@ s(
     t("$"),
   }
 ),
+
 }
