@@ -102,9 +102,9 @@ s(
     snippetType="autosnippet",
   },
   {
-    t("\\begin{lemma}["),
+    t("\\begin{lemma}{"),
     i(1),
-    t("]"),
+    t("}"),
     i(2),
     t("\\end{lemma}"),
     }
@@ -116,9 +116,9 @@ s(
     snippetType="autosnippet",
   },
   {
-    t("\\begin{satz}["),
+    t("\\begin{satz}{"),
     i(1),
-    t("]"),
+    t("}"),
     i(2),
     t("\\end{satz}"),
     }
@@ -239,24 +239,24 @@ s(
     snippetType="autosnippet",
   },
   {
-    t("\\begin{def}["),
+    t("\\begin{defi}{"),
     i(1),
-    t("]"),
+    t("}"),
     i(2),
-    t("\\end{def}"),
+    t("\\end{defi}"),
     }
 ),
 s(
   {
     trig="nprp",
-    dscr="\\begin{propertz}",
+    dscr="\\begin{property}",
     snippetType="autosnippet",
     wordTrig=true,
   },
   {
-    t("\\begin{prop}["),
+    t("\\begin{prop}{"),
     i(1),
-    t("]"),
+    t("}"),
     i(2),
     t("\\end{prop}")
   }
@@ -348,7 +348,7 @@ s(
 ),
 s(
   {
-    trig="lar",
+    trig="larr",
     dscr="\\leftarro3",
     snippetType="autosnippet",
   },
@@ -1067,5 +1067,80 @@ s(
     t("$"),
   }
 ),
-
+s(
+  {
+    trig="{",
+    dscr="Brackets",
+    snippetType="autosnippet",
+    wordTrig=false,
+  },
+  {
+    t("{"),
+    i(1),
+    t("}")
+  }
+),
+s(
+  {
+    trig="(",
+    dscr="Brackets",
+    snippetType="autosnippet",
+    wordTrig=false,
+  },
+  {
+    t("("),
+    i(1),
+    t(")")
+  }
+),
+s(
+  {
+    trig="[",
+    dscr="Brackets",
+    snippetType="autosnippet",
+    wordTrig=false,
+  },
+  {
+    t("["),
+    i(1),
+    t("]")
+  }
+),
+s(
+  {
+    trig="dt",
+    dscr="dot",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+      t("\\dot{"),
+      i(1),
+  t("}"),
+  }
+),
+s(
+  {
+    trig="ddt",
+    dscr="dot",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+      t("\\ddot{"),
+      i(1),
+  t("}"),
+  }
+),
+s(
+  {
+    trig="Omega",
+    dscr="Omega",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\Omega"),
+  }
+),
 }
