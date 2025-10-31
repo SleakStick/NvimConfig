@@ -688,9 +688,11 @@ s(
     snippetType="autosnippet",
   },
   {
-      t("\\korollar{"),
+      t("\\begin{korr}{"),
       i(1),
       t("}"),
+      i(2),
+      t("\\end{korr}"),
 }
 ),
 s(
@@ -1141,6 +1143,17 @@ s(
   },
   {
     t("\\Omega"),
+  }
+),
+s(
+  {
+    trig="zeta",
+    dscr="\\zeta",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\zeta"),
   }
 ),
 }
