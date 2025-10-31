@@ -13,7 +13,7 @@ return {
 --    }
     vim.g.vimtex_compiler_method = "latexmk"
 
-    vim.g.vimtex_view_general_viewer = "org.gnome.Evince"
+    vim.g.vimtex_view_general_viewer = "evince"
     vim.g.vimtex_view_general_options = [[-reuse-instance -forward-search @tex @line @pdf]]
     vim.g.vimtex_view_forward_search_on_start = 1 -- Auto-open PDF on compile
 
