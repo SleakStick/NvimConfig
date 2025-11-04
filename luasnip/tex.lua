@@ -1156,4 +1156,45 @@ s(
     t("\\zeta"),
   }
 ),
+s(
+  {
+    trig="bra",
+    dscr="<bra|",
+    snippetType="snippet",
+    wordTrig=false,
+  },
+  {
+    t("\\left<"),
+    i(1),
+    t("\\right|"),
+  }
+),
+s(
+  {
+    trig="ket",
+    dscr="|ket>",
+    snippetType="snippet",
+    wordTrig=false,
+  },
+  {
+    t("\\left|"),
+    i(1),
+    t("\\right>"),
+  }
+),
+s(
+  {
+    trig="brkt",
+    dscr="<bra|ket>",
+    snippetType="snippet",
+    wordTrig=false,
+  },
+  {
+    t("\\left<"),
+    i(1),
+    t("|"),
+    i(2),
+    t("\\right>"),
+  }
+),
 }
