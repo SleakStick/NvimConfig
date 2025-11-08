@@ -48,8 +48,8 @@ end
 keymap.set("n", "<leader>mi", ":MoltenInit<CR>" , { desc = "Initiate Molten" })
 keymap.set("n", "<leader>mn", line_range_to_cell_create, {desc = "Create Molten cell from current line to +N line"})
 keymap.set("n", "<leader>ml", ":MoltenEvaluateLine<CR>" , { desc = "Run line" })
-keymap.set("n", "<leader>mc", ":MoltenReevaluateCell<CR>" , { desc = "Run block" })
-keymap.set("n", "<leader>md", ":MoltenDelete<CR>" , { desc = "Run block" })
+keymap.set("n", "<leader>mc", ":MoltenReevaluateCell<CR>" , { desc = "Run cell" })
+keymap.set("n", "<leader>md", ":MoltenDelete<CR>" , { desc = "Delete cell" })
 vim.keymap.set("v", "<leader>mv", ":<C-u>MoltenEvaluateVisual<CR>gv",{ desc = "Run visual selection" })
 
 
