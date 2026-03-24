@@ -52,4 +52,13 @@ keymap.set("n", "<leader>mc", ":MoltenReevaluateCell<CR>" , { desc = "Run cell" 
 keymap.set("n", "<leader>md", ":MoltenDelete<CR>" , { desc = "Delete cell" })
 vim.keymap.set("v", "<leader>mv", ":<C-u>MoltenEvaluateVisual<CR>gv",{ desc = "Run visual selection" })
 
+keymap.set("n", "<leader>op", "<cmd>:lua require('pdfview').open()<CR>", {desc = "Open pdfview"})
+keymap.set("n", "<leader>jj", "<cmd>:lua require('pdfview.renderer').next_page()<CR>", { desc = "PDFview: Next page" })
+keymap.set("n", "<leader>kk", "<cmd>:lua require('pdfview.renderer').previous_page()<CR>", { desc = "PDFview: Previous page" })
 
+vim.keymap.set('n', '<leader>ne', ':AnkiEdit<CR>', opts)
+vim.keymap.set('n', '<leader>nl', ':AnkiList<CR>', opts)
+vim.keymap.set('n', '<leader>np', ':AnkiPing<CR>', opts)
+
+vim.keymap.set("n", "<C-c>", "<cmd>PickColor<cr>", opts)
+vim.keymap.set("i", "<C-c>", "<cmd>PickColorInsert<cr>", opts)
