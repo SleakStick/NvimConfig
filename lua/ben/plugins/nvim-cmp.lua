@@ -54,6 +54,7 @@ return {
     sources = cmp.config.sources({
       { name = "luasnip" },
       { name = "path" },
+      { name = "buffer" },
     }),
     formatting = {
       format = lspkind.cmp_format({
