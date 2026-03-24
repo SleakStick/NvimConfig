@@ -42,6 +42,8 @@ return {
         "query",
         "vimdoc",
         "c",
+        "commonlisp",
+        "yuck",
       },
       incremental_selection = {
         enable = true,
