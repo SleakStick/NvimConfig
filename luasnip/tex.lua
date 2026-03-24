@@ -567,7 +567,7 @@ s(
     snippetType="autosnippet",
   },
   {
-    t("\\left\\lbrace"),
+    t("\\left\\lbrace "),
     i(1),
     t("\\right\\rbrace"),
     }
@@ -1195,6 +1195,43 @@ s(
     t("|"),
     i(2),
     t("\\right>"),
+  }
+),
+s(
+  {
+    trig="suub",
+      dscr="\\subsubsection*{}",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\subsubsection*{"),
+    i(1),
+    t("}"),
+  }
+),
+s(
+  {
+    trig="bksl",
+    dscr="\\backslash",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\backslash"),
+  }
+),
+s(
+  {
+    trig="fsh",
+      dscr="\\fsh{}",
+    snippetType="autosnippet",
+    wordTrig=true,
+  },
+  {
+    t("\\fsh{"),
+    i(1),
+    t("}"),
   }
 ),
 }
