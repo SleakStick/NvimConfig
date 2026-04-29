@@ -20,7 +20,8 @@ return {
   
   luasnip.config.setup({
       enable_autosnippets = true,
-          })
+  })
+  vim.api.nvim_create_autocmd("FileType", {pattern = "tex",callback = function()luasnip.config.set_config({word_pattern = "[-%w]+"})end,})
  
   -- Load custom snippets
   require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/luasnip"})
@@ -54,7 +55,7 @@ return {
     sources = cmp.config.sources({
       { name = "luasnip" },
       { name = "path" },
-      { name = "buffer" },
+      --{ name = "buffer" },
     }),
     formatting = {
       format = lspkind.cmp_format({
