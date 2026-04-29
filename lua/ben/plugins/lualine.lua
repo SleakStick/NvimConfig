@@ -8,69 +8,140 @@ return {
     local screenkey = require("screenkey")
 
     local colors = {
-      blue = "#65D1FF",
-      green = "#3EFFDC",
-      violet = "#FF61EF",
-      yellow = "#FFDA7B",
-      red = "#FF4A4A",
-      fg = "#c3ccdc",
-      bg = "#112638",
-      inactive_bg = "#2c3043",
+      white ="#ffffff",
+      blue = "#0066b2",
+      darkblue ="#001532",
+      darkgray = "#3b3b3b",
+      gray = "#4c4c4c",
+      lightgray = "#6d6d6d",
+      fg = "#ffffff",
+      bg = "#1a1a1a",
+      inactive_bg = "#1a1a1a",
     }
 
-    local my_lualine_theme = {
+    local theme = {
       normal = {
-        a = { bg = colors.blue, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
+        a = { bg = colors.blue, fg = colors.bg},
+        b = { bg = colors.darkgray, fg = colors.fg },
         c = { bg = colors.bg, fg = colors.fg },
+        x = { bg = colors.lightgray, fg = colors.fg },
+        y = { bg = colors.blue, fg = colors.fg },
       },
       insert = {
-        a = { bg = colors.green, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
+        a = { bg = colors.blue, fg = colors.bg},
+        b = { bg = colors.darkgray, fg = colors.fg },
         c = { bg = colors.bg, fg = colors.fg },
+        x = { bg = colors.lightgray, fg = colors.fg },
+        y = { bg = colors.blue, fg = colors.fg },
       },
       visual = {
-        a = { bg = colors.violet, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
+        a = { bg = colors.blue, fg = colors.bg},
+        b = { bg = colors.darkgray, fg = colors.fg },
         c = { bg = colors.bg, fg = colors.fg },
+        x = { bg = colors.lightgray, fg = colors.fg },
+        y = { bg = colors.blue, fg = colors.fg },
       },
       command = {
-        a = { bg = colors.yellow, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
+        a = { bg = colors.blue, fg = colors.bg},
+        b = { bg = colors.darkgray, fg = colors.fg },
         c = { bg = colors.bg, fg = colors.fg },
+        x = { bg = colors.lightgray, fg = colors.fg },
+        y = { bg = colors.blue, fg = colors.fg },
       },
       replace = {
-        a = { bg = colors.red, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
+        a = { bg = colors.blue, fg = colors.bg},
+        b = { bg = colors.darkgray, fg = colors.fg },
         c = { bg = colors.bg, fg = colors.fg },
+        x = { bg = colors.lightgray, fg = colors.fg },
+        y = { bg = colors.blue, fg = colors.fg },
       },
       inactive = {
-        a = { bg = colors.inactive_bg, fg = colors.semilightgray, gui = "bold" },
-        b = { bg = colors.inactive_bg, fg = colors.semilightgray },
-        c = { bg = colors.inactive_bg, fg = colors.semilightgray },
+        a = { bg = colors.blue, fg = colors.bg},
+        b = { bg = colors.darkgray, fg = colors.fg },
+        c = { bg = colors.bg, fg = colors.fg },
+        x = { bg = colors.lightgray, fg = colors.fg },
+        y = { bg = colors.blue, fg = colors.fg },
       },
     }
     vim.cmd('Screenkey toggle_statusline_component')
-    -- configure lualine with modified theme
     lualine.setup({
       options = {
-        theme = my_lualine_theme,
+        icons_enabled = true,
+        theme = theme,
+        component_separators = { left = '', right = ''},
+        section_separators = { left = '', right = ''},
+        disabled_filetypes = {
+          statusline = {},
+          winbar = {},
+        },
+        ignore_focus = {},
+        always_divide_middle = true,
+        always_show_tabline = true,
+        globalstatus = true,
+        refresh = {
+          statusline = 1000,
+          tabline = 1000,
+          winbar = 1000,
+          refresh_time = 16, -- ~60fps
+          events = {
+            'WinEnter',
+            'BufEnter',
+            'BufWritePost',
+            'SessionLoadPost',
+            'FileChangedShellPost',
+            'VimResized',
+            'Filetype',
+            'CursorMoved',
+            'CursorMovedI',
+            'ModeChanged',
+          },
+        }
       },
       sections = {
-        lualine_x = {
+        lualine_a = {
           {
-            lazy_status.updates,
-            cond = lazy_status.has_updates,
-            color = { fg = "#ff9e64" },
+            color = { fg = colors.blue, bg= "none"},
+            padding = { left = 0, right = 0 },
+            function() return "" end,
+          },
+          {color = { fg = colors.white , bg= colors.blue},'mode'},
+          },
+        lualine_b = {'filename'},
+        lualine_c = {},
+        lualine_x = {
+          --{
+            --lazy_status.updates,
+            --cond = lazy_status.has_updates,
+           -- color = { fg = "#6d6d6d" },
+          --},
+          {
+            color = { fg = colors.lightgray, bg= "none"},
+            padding = { left = 0, right = 0 },
+            function() return "" end,
+          },
+          {
+            color = { fg = colors.lightgray, bg= colors.lightgray},
+            padding = { left = 0, right = 0 },
+            function() return " " end,
           },
           {
             function()
               return screenkey.get_keys()
             end,
           },
-          { "encoding" },
+
+        },
+        lualine_y = {
           { "fileformat" },
           { "filetype" },
+        },
+        lualine_z = {
+          { color = { fg = colors.white , bg= colors.darkblue}, 'location' },
+          {
+            color = { fg = colors.darkblue, bg= "none"},
+            padding = { left = 0, right = 0 },
+            function() return "" end,
+          },
         },
         
      },
