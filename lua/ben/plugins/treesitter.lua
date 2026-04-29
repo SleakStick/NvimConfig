@@ -2,6 +2,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
+  disable = { "latex" },
   dependencies = {
     "windwp/nvim-ts-autotag",
   },
