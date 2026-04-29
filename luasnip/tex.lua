@@ -11,6 +11,12 @@ local d = ls.dynamic_node
 local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
+
+--This is a condition to make sure that autosnippets (and snippets) still are valid after an underscore, it solves annoying missing autocompletion on subscripts
+local function after_sub_sup(line_to_cursor, matched_trigger)
+  local preceding_char = line_to_cursor:sub(-(#matched_trigger + 1), -(#matched_trigger + 1))
+  return preceding_char == "" or preceding_char:match("[%s%^_%b()]")
+end
  
 
 return{
@@ -19,7 +25,9 @@ s(
   {-- Snippet parameters called "context"
     trig="mb",
     dscr="Mathbb environment for common sets",
-    snippetType="autosnippet"
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\mathbb{"),
@@ -31,7 +39,9 @@ s(
   {
     trig="mc",
     dscr="\\mathcal{}",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\mathcal{"),
@@ -43,13 +53,16 @@ s(
   {
     trig="ita",
     dscr="Italic text environment",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {t("\\textit{"),i(1),t("}"),i(2),}
 ),
 
 s(
-  {trig="itize",dscr="Itemize enviromnent",snippetType="autosnippet"},
+  {trig="itize",dscr="Itemize enviromnent",condition = after_sub_sup,
+		snippetType="autosnippet", wordTrig=false},
   { t({"\\begin{itemize}", "\\item["}),
     i(1),
     t("]{"),
@@ -61,7 +74,8 @@ s(
   {
     trig="item",
     dscr="\\item",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -99,7 +113,9 @@ s(
   {
     trig="nlem",
     dscr="New lemma",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\begin{lemma}{"),
@@ -113,7 +129,9 @@ s(
   {
     trig="nsat",
     dscr="New satz",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\begin{satz}{"),
@@ -128,7 +146,9 @@ s(
   {
     trig="nbew",
     dscr="New Beweis",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\beweis"),
@@ -138,7 +158,9 @@ s(
   {
     trig="ff",
     dscr="fraction",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\frac{"),
@@ -152,7 +174,9 @@ s(
   {
     trig="pmat",
     dscr="New parantheses matrix",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\begin{pmatrix}"),
@@ -165,7 +189,9 @@ s(
   {
     trig="rar",
     dscr="\\rightarrow",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\rightarrow"),
@@ -176,7 +202,9 @@ s(
   {
     trig="Rar",
     dscr="\\Rightarrow",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\Rightarrow"),
@@ -186,7 +214,9 @@ s(
   {
     trig="bf",
     dscr="\\textbf{}",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\textbf{"),
@@ -198,7 +228,9 @@ s(
   {
     trig="veps",
     dscr="\\varepsilon",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\varepsilon"),
@@ -208,7 +240,8 @@ s(
   {
     trig="d",
     dscr="\\delta",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -219,7 +252,8 @@ s(
   {
     trig="int",
     dscr="Integral snippet",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -236,7 +270,9 @@ s(
   {
     trig="ndef",
     dscr="\\definition{}",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\begin{defi}{"),
@@ -250,8 +286,9 @@ s(
   {
     trig="nprp",
     dscr="\\begin{property}",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\begin{prop}{"),
@@ -265,8 +302,9 @@ s(
   {
     trig="nlaw",
     dscr="\\begin{law}",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\begin{law}"),
@@ -278,7 +316,9 @@ s(
   {
     trig="mucol",
     dscr="Multicols environment",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\begin{multicols}{"),
@@ -292,7 +332,9 @@ s(
   {
     trig="txt",
     dscr="\\text{}",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\text{"),
@@ -305,7 +347,9 @@ s(
   {
     trig="vc",
     dscr="\\vec{}",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\vec{"),
@@ -317,7 +361,8 @@ s(
   {
     trig="IP",
     dscr="IP raum",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -329,7 +374,9 @@ s(
   {
     trig="LRar",
     dscr="\\Longrightarrow",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\Longrightarrow"),
@@ -340,7 +387,9 @@ s(
   {
     trig="Lar",
     dscr="\\Leftarrow",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\Leftarrow"),
@@ -350,7 +399,9 @@ s(
   {
     trig="larr",
     dscr="\\leftarro3",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\leftarrow"),
@@ -360,7 +411,9 @@ s(
   {
     trig="LeRar",
     dscr="",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\Leftrightarrow"),
@@ -370,7 +423,9 @@ s(
   {
     trig="limfty",
     dscr="",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\lim_{"),
@@ -382,7 +437,8 @@ s(
   {
     trig="lim",
     dscr="\\lim_{\\rightarrow}",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -397,7 +453,8 @@ s(
   {
     trig="sum",
     dscr="\\sum",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -412,7 +469,9 @@ s(
   {
     trig="fral",
     dscr="\\forall",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\forall"),
@@ -422,7 +481,9 @@ s(
   {
     trig="inf",
     dscr="\\infty",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
+    wordTrig=false,
   },
   {
     t("\\infty"),
@@ -433,7 +494,9 @@ s(
   {
     trig="cd",
     dscr="\\cdot",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\cdot"),
@@ -443,7 +506,9 @@ s(
   {
     trig="cds",
     dscr="\\cdots",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\cdots"),
@@ -453,7 +518,8 @@ s(
   {
     trig="circ",
     dscr="\\circ",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -464,7 +530,9 @@ s(
   {
     trig="nmat",
     dscr="New matrix",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\begin{matrix}"),
@@ -476,7 +544,8 @@ s(
   {
     trig="sin",
     dscr="\\sin",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -489,7 +558,8 @@ s(
   {
     trig="cos",
     dscr="\\cos",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -502,7 +572,9 @@ s(
   {
     trig="sbs",
     dscr="",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\subset"),
@@ -512,7 +584,9 @@ s(
   {
     trig="sps",
     dscr="",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\supset"),
@@ -522,7 +596,9 @@ s(
   {
     trig="lbd",
     dscr="\\lambda",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\lambda"),
@@ -532,7 +608,9 @@ s(
   {
     trig="exs",
     dscr="\\exists",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\exists"),
@@ -542,7 +620,9 @@ s(
   {
     trig="tet",
     dscr="\\theta",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\theta"),
@@ -552,7 +632,9 @@ s(
   {
     trig="mc",
     dscr="\\mathcal{}",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\mathcal{"),
@@ -564,7 +646,9 @@ s(
   {
     trig="brcs",
     dscr="\\left\\lbrace ... \\right \\rbrace",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\left\\lbrace "),
@@ -576,7 +660,8 @@ s(
   {
     trig="ga",
     dscr="\\gamma",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -587,7 +672,9 @@ s(
   {
     trig="seimat",
     dscr="M_{n\\times n}(K)",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("M_{"),
@@ -603,7 +690,9 @@ s(
   {
     trig="tld",
     dscr="\\tilde{}",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\tilde{"),
@@ -615,7 +704,8 @@ s(
   {
     trig="D",
     dscr="\\Delta",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -626,7 +716,8 @@ s(
   {
     trig="B",
     dscr="\\Beta",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -637,7 +728,9 @@ s(
   {
     trig="nbem",
     dscr="\\bemerkung",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\bemerkung{"),
@@ -649,7 +742,9 @@ s(
   {
     trig="nbes",
     dscr="\\beispiel{}",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\beispiel{"),
@@ -661,7 +756,9 @@ s(
   {
     trig="Lrar",
     dscr="\\Leftrightarrow",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\Leftrightarrow"),
@@ -671,7 +768,8 @@ s(
   {
     trig="b",
     dscr="Brackets environment for easy access out of the bracket",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
     trigEngine= "ecma",
   },
@@ -685,7 +783,9 @@ s(
   {
     trig="nkor",
     dscr="\\korollar{}",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
       t("\\begin{korr}{"),
@@ -699,7 +799,9 @@ s(
   {
     trig="pti",
     dscr="\\partial",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\partial"),
@@ -709,7 +811,8 @@ s(
   {
     trig="£",
     dscr="Brackets for quick tabulation outside",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
     wordTrig=false,
   },
   {
@@ -721,7 +824,9 @@ s(
   {
     trig="RN",
       dscr="\\mathbb{R}^n",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
       t("\\mathbb{R}^n"),
@@ -731,7 +836,9 @@ s(
   {
     trig="lrd",
     dscr="\\left_ \\right_",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\left"), 
@@ -744,7 +851,8 @@ s(
   {
     trig="alp",
     dscr="\\alpha",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -755,7 +863,8 @@ s(
   {
     trig="bet",
     dscr="\\beta",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -766,7 +875,8 @@ s(
     {
       trig="vphi",
       dscr="\\varphi",
-      snippetType="autosnippet",
+      condition = after_sub_sup,
+		snippetType="autosnippet",
     },
     {
       t("\\varphi"),
@@ -776,7 +886,9 @@ s(
   {
     trig="phi",
     dscr="\\phi",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\phi"),
@@ -786,7 +898,8 @@ s(
   {
     trig="eta",
     dscr="\\eta",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -797,8 +910,9 @@ s(
   {
     trig="uset",
     dscr="\\underset and \\underbrace environment",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\underset{"),
@@ -812,8 +926,9 @@ s(
   {
     trig="psi",
     dscr="\\psi",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\psi"),
@@ -823,8 +938,9 @@ s(
   {
     trig="oline",
     dscr="\\overline{}",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\overline{"),
@@ -836,8 +952,9 @@ s(
   {
     trig="bsy",
     dscr="\\boldsymbol",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\boldsymbol{"),
@@ -849,8 +966,9 @@ s(
   {
     trig="nrm",
     dscr="\\norm",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\norm{"),
@@ -862,8 +980,9 @@ s(
   {
     trig="tms",
     dscr=" \\times",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\times"),
@@ -873,7 +992,8 @@ s(
   {
     trig="pi",
     dscr="\\pi",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -884,8 +1004,9 @@ s(
   {
     trig="qsbs",
     dscr="\\sqsubset",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\sqsubset"),
@@ -895,8 +1016,9 @@ s(
   {
     trig="sqrt",
     dscr="\\sqrt{}",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\sqrt{"),
@@ -908,7 +1030,8 @@ s(
   {
     trig="Phi",
     dscr="\\Phi",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -919,8 +1042,9 @@ s(
   {
     trig="sigma",
     dscr="\\sigma",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\sigma"),
@@ -930,8 +1054,9 @@ s(
   {
     trig="oline",
     dscr="\\overline",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\overline{"),
@@ -943,8 +1068,9 @@ s(
   {
     trig="uline",
     dscr="\\underline",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\underline{"),
@@ -956,8 +1082,9 @@ s(
   {
     trig="bcup",
     dscr="\\bigcup",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\bigcup_{"),
@@ -971,8 +1098,9 @@ s(
   {
     trig="bcap",
     dscr="\\bigcap",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\bigcap_{"),
@@ -986,8 +1114,9 @@ s(
   {
     trig="mf",
     dscr="\\mathbf{}",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
       t("\\mathbf{"),
@@ -999,8 +1128,9 @@ s(
   {
     trig="flsh",
     dscr="\\begin{flashcard}",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
       t({"\\begin{flashcard}["}),
@@ -1014,8 +1144,9 @@ s(
   {
     trig="omega",
     dscr="\\omega",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\omega"),
@@ -1025,8 +1156,9 @@ s(
   {
     trig="ht",
     dscr="\\hat{}",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\hat{"),
@@ -1038,8 +1170,9 @@ s(
   {
     trig="xi",
     dscr="\\xi",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\xi"),
@@ -1049,8 +1182,9 @@ s(
   {
     trig="rho",
     dscr="\\rho",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\rho"),
@@ -1060,7 +1194,8 @@ s(
   {
     trig="i",
     dscr="inline display math environment",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -1073,7 +1208,8 @@ s(
   {
     trig="{",
     dscr="Brackets",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
     wordTrig=false,
   },
   {
@@ -1086,7 +1222,8 @@ s(
   {
     trig="(",
     dscr="Brackets",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
     wordTrig=false,
   },
   {
@@ -1099,7 +1236,8 @@ s(
   {
     trig="[",
     dscr="Brackets",
-    snippetType="autosnippet",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
     wordTrig=false,
   },
   {
@@ -1112,8 +1250,9 @@ s(
   {
     trig="dt",
     dscr="dot",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
       t("\\dot{"),
@@ -1125,8 +1264,9 @@ s(
   {
     trig="ddt",
     dscr="dot",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
       t("\\ddot{"),
@@ -1138,8 +1278,9 @@ s(
   {
     trig="Omega",
     dscr="Omega",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\Omega"),
@@ -1149,8 +1290,9 @@ s(
   {
     trig="zeta",
     dscr="\\zeta",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\zeta"),
@@ -1160,7 +1302,8 @@ s(
   {
     trig="bra",
     dscr="<bra|",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -1173,7 +1316,8 @@ s(
   {
     trig="ket",
     dscr="|ket>",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -1186,7 +1330,8 @@ s(
   {
     trig="brkt",
     dscr="<bra|ket>",
-    snippetType="snippet",
+    condition = after_sub_sup,
+		snippetType="snippet",
     wordTrig=false,
   },
   {
@@ -1201,8 +1346,9 @@ s(
   {
     trig="suub",
       dscr="\\subsubsection*{}",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\subsubsection*{"),
@@ -1214,8 +1360,9 @@ s(
   {
     trig="bksl",
     dscr="\\backslash",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\backslash"),
@@ -1225,13 +1372,26 @@ s(
   {
     trig="fsh",
       dscr="\\fsh{}",
-    snippetType="autosnippet",
-    wordTrig=true,
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
   },
   {
     t("\\fsh{"),
     i(1),
     t("}"),
+  }
+),
+s(
+  {
+    trig="chi",
+    dscr="\\chi",
+    condition = after_sub_sup,
+		snippetType="autosnippet",
+    wordTrig=false,
+  },
+  {
+    t("\\chi"),
   }
 ),
 }
