@@ -12,10 +12,11 @@ local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
---This is a condition to make sure that autosnippets (and snippets) still are valid after an underscore, it solves annoying missing autocompletion on subscripts
+--This is a condition to make sure that autosnippets (and snippets) still are valid after an underscore (and other chars like $, [, ], {, }, etc...
+-- it solves annoying missing autocompletion on subscripts
 local function after_sub_sup(line_to_cursor, matched_trigger)
   local preceding_char = line_to_cursor:sub(-(#matched_trigger + 1), -(#matched_trigger + 1))
-  return preceding_char == "" or preceding_char:match("[%s%^_%b()]")
+  return preceding_char == "" or preceding_char:match("[%s-%^_}{%[%]%(%)%+%-%*%$=%b()%|%,%.]")
 end
  
 
@@ -852,7 +853,7 @@ s(
     trig="alp",
     dscr="\\alpha",
     condition = after_sub_sup,
-		snippetType="snippet",
+		snippetType="autosnippet",
     wordTrig=false,
   },
   {
@@ -864,7 +865,7 @@ s(
     trig="bet",
     dscr="\\beta",
     condition = after_sub_sup,
-		snippetType="snippet",
+		snippetType="autosnippet",
     wordTrig=false,
   },
   {
@@ -1394,4 +1395,45 @@ s(
     t("\\chi"),
   }
 ),
+s(
+  {
+    trig="nbl",
+    dscr="\\nabla",
+    snippetType="autosnippet",
+    condition = after_sub_sup,
+    wordTrig=false,
+  },
+  {
+    t("\\nabla"),
+  }
+),
+s(
+  {
+    trig="chk",
+    dscr="\\check{}",
+    snippetType="autosnippet",
+    condition = after_sub_sup,
+    wordTrig=false,
+  },
+  {
+    t("\\check{"),
+    i(1),
+    t("}"),
+  }
+),
+s(
+  {
+    trig="scr",
+    dscr="\\mathscr{}",
+    snippetType="autosnippet",
+    condition = after_sub_sup,
+    wordTrig=false,
+  },
+  {
+    t("\\mathscr{"),
+    i(1),
+    t("}"),
+  }
+),
 }
+
